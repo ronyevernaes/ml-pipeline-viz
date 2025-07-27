@@ -1,11 +1,11 @@
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col h-screen">
       <header className="p-4 border-b border-stone-700">
         <h1 className="text-3xl font-bold">Data Viz Pipelines</h1>
       </header>
 
-      <main className="flex-1 p-4 flex">
+      <main className="flex-1 p-4 min-h-0">
         Content here...
       </main>
 
