@@ -1,3 +1,5 @@
+import { PipelineViz } from "./components";
+
 function App() {
   return (
     <div className="flex flex-col h-screen">
@@ -6,7 +8,7 @@ function App() {
       </header>
 
       <main className="flex-1 p-4 min-h-0">
-        Content here...
+        <PipelineViz />
       </main>
 
       <footer className="p-2 border-t border-stone-700 text-center text-sm text-stone-600">
