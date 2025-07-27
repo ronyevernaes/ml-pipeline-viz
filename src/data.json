@@ -1,0 +1,185 @@
+{
+  "id": "pipeline-202",
+  "name": "Complex ML Research Pipeline",
+  "status": "pending",
+  "startTime": null,
+  "steps": [
+    {
+      "id": "data-prep",
+      "name": "Data Preparation",
+      "status": "pending",
+      "runtime": null,
+      "resources": {
+        "cpu": "4 cores",
+        "memory": "8GB"
+      },
+      "artifacts": [],
+      "startTime": null,
+      "endTime": null
+    },
+    {
+      "id": "feature-eng",
+      "name": "Feature Engineering",
+      "status": "pending",
+      "runtime": null,
+      "resources": {
+        "cpu": "4 cores",
+        "memory": "8GB"
+      },
+      "artifacts": [],
+      "startTime": null,
+      "endTime": null
+    },
+    {
+      "id": "model-xgb",
+      "name": "Train XGBoost",
+      "status": "pending",
+      "runtime": null,
+      "resources": {
+        "cpu": "8 cores",
+        "memory": "16GB"
+      },
+      "artifacts": [],
+      "startTime": null,
+      "endTime": null
+    },
+    {
+      "id": "model-nn",
+      "name": "Train Neural Network",
+      "status": "pending",
+      "runtime": null,
+      "resources": {
+        "cpu": "8 cores",
+        "memory": "32GB",
+        "gpu": "2 GPUs"
+      },
+      "artifacts": [],
+      "startTime": null,
+      "endTime": null
+    },
+    {
+      "id": "model-rf",
+      "name": "Train Random Forest",
+      "status": "pending",
+      "runtime": null,
+      "resources": {
+        "cpu": "8 cores",
+        "memory": "16GB"
+      },
+      "artifacts": [],
+      "startTime": null,
+      "endTime": null
+    },
+    {
+      "id": "eval-xgb",
+      "name": "Evaluate XGBoost",
+      "status": "pending",
+      "runtime": null,
+      "resources": {
+        "cpu": "2 cores",
+        "memory": "4GB"
+      },
+      "artifacts": [],
+      "startTime": null,
+      "endTime": null
+    },
+    {
+      "id": "eval-nn",
+      "name": "Evaluate Neural Network",
+      "status": "pending",
+      "runtime": null,
+      "resources": {
+        "cpu": "2 cores",
+        "memory": "4GB"
+      },
+      "artifacts": [],
+      "startTime": null,
+      "endTime": null
+    },
+    {
+      "id": "eval-rf",
+      "name": "Evaluate Random Forest",
+      "status": "pending",
+      "runtime": null,
+      "resources": {
+        "cpu": "2 cores",
+        "memory": "4GB"
+      },
+      "artifacts": [],
+      "startTime": null,
+      "endTime": null
+    },
+    {
+      "id": "model-selection",
+      "name": "Select Best Model",
+      "status": "pending",
+      "runtime": null,
+      "resources": {
+        "cpu": "2 cores",
+        "memory": "4GB"
+      },
+      "artifacts": [],
+      "startTime": null,
+      "endTime": null
+    },
+    {
+      "id": "model-deploy",
+      "name": "Deploy Model",
+      "status": "pending",
+      "runtime": null,
+      "resources": {
+        "cpu": "4 cores",
+        "memory": "8GB"
+      },
+      "artifacts": [],
+      "startTime": null,
+      "endTime": null
+    }
+  ],
+  "dependencies": [
+    {
+      "source": "data-prep",
+      "target": "feature-eng"
+    },
+    {
+      "source": "feature-eng",
+      "target": "model-xgb"
+    },
+    {
+      "source": "feature-eng",
+      "target": "model-nn"
+    },
+    {
+      "source": "feature-eng",
+      "target": "model-rf"
+    },
+    {
+      "source": "model-xgb",
+      "target": "eval-xgb"
+    },
+    {
+      "source": "model-nn",
+      "target": "eval-nn"
+    },
+    {
+      "source": "model-rf",
+      "target": "eval-rf"
+    },
+    {
+      "source": "eval-xgb",
+      "target": "model-selection"
+    },
+    {
+      "source": "eval-nn",
+      "target": "model-selection"
+    },
+    {
+      "source": "eval-rf",
+      "target": "model-selection"
+    },
+    {
+      "source": "model-selection",
+      "target": "model-deploy"
+    }
+  ]
+}
