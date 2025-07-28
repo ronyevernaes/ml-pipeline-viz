@@ -1,5 +1,17 @@
-export type PipelineStatus = 'pending' | 'running' | 'completed' | 'failed';
-export type StepStatus = 'pending' | 'running' | 'completed' | 'failed' | 'skipped';
+export enum PipelineStatus {
+  PENDING = 'pending',
+  RUNNING = 'running',
+  COMPLETED = 'completed',
+  FAILED = 'failed',
+}
+
+export enum StepStatus {
+  PENDING = 'pending',
+  RUNNING = 'running',
+  COMPLETED = 'completed',
+  FAILED = 'failed',
+  SKIPPED = 'skipped',
+}
 
 export interface Resources {
   cpu: string;
