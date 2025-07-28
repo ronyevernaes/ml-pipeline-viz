@@ -14,6 +14,8 @@ import type { Pipeline, Step } from '../../types';
 import { useInitEdges, useInitNodes } from '../../hooks';
 import { CustomNode } from '../CustomNode';
 import { CustomEdge } from '../CustomEdge';
+import { Badge } from '../Badge';
+import { PipelineStatusColors } from '../../constants';
 
 interface Props {
   data: Pipeline;
@@ -41,7 +43,15 @@ export const PipelineViz: FC<Props> = ({ data }: Props) => {
 
   return (
     <div className='flex-1 min-h-0 flex flex-col'>
-      <h2 className="text-2xl font-semibold">{data.name}</h2>
+      <div>
+        <h2 className="text-2xl font-semibold flex gap-2">
+          {data.name}
+
+          <Badge className={PipelineStatusColors[data.status]}>
+            {data.status}
+          </Badge>
+        </h2>
+      </div>
 
       <ReactFlow
         nodes={nodes}
