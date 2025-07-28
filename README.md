@@ -2,6 +2,12 @@
 
 This is a demo for pipeline data visualization.
 
+## Set up
+```
+npm install
+npm run dev
+```
+
 ## Roadmap
 
 - [x] Pipeline data basic visualization
