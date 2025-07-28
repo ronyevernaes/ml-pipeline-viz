@@ -5,38 +5,20 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   addEdge,
-  Position,
 } from 'reactflow';
 
 import type { Connection, Edge } from 'reactflow';
 
 import 'reactflow/dist/style.css';
 import type { Pipeline, Step } from '../../types';
-import { useNodeLevels } from '../../hooks/useNodeLevels';
+import { useInitNodes } from '../../hooks/useInitNodes';
 
 interface Props {
   data: Pipeline;
 }
 
 export const PipelineViz: FC<Props> = ({ data }: Props) => {
-  const levels = useNodeLevels(data);
-  
-  const initialNodes = data.steps.map((step) => {
-    const level = levels[step.id] || 0;
-    const nodesAtLevel = data.steps.filter(s => levels[s.id] === level);
-    const indexAtLevel = nodesAtLevel.findIndex(s => s.id === step.id);
-    
-    return {
-      id: step.id,
-      position: {
-        x: level * 300, // Horizontal spacing between levels
-        y: indexAtLevel * 120 // Vertical spacing within level
-      },
-      data: { label: step.name, ...step },
-      sourcePosition: Position.Right,
-      targetPosition: Position.Left,
-    };
-  });
+  const initialNodes = useInitNodes(data);
 
   const initialEdges = data.dependencies.map((dep) => ({
     id: `e-${dep.source}-${dep.target}`,
