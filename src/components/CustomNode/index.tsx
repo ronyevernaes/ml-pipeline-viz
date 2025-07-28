@@ -1,6 +1,8 @@
 import { type FC, memo } from 'react';
 import { Handle, Position } from 'reactflow';
 
+import { Badge } from '../Badge';
+import { StepStatusColors } from '../../constants';
 import type { Step } from '../../types';
 
 interface Props {
@@ -20,15 +22,17 @@ export const CustomNode: FC<Props> = memo(({ data, isConnectable }) => {
         isConnectable={isConnectable}
       />
 
-      <div className='font-semibold p-4 bg-stone-200 rounded-lg'>
+      <div className='font-semibold py-2 px-4 bg-stone-200 rounded-lg flex flex-col gap-2'>
         {name}
 
-        <div>
-          <div className='text-sm text-stone-400'>
-            <div>CPU: {cpu}</div>
-            <div>Memory: {memory}</div>
-            {gpu && <div>GPU: {gpu}</div>}
-          </div>
+        <Badge className={StepStatusColors[data.status]}>
+          {data.status}
+        </Badge>
+
+        <div className='text-sm text-stone-400'>
+          <div>CPU: {cpu}</div>
+          <div>Memory: {memory}</div>
+          {gpu && <div>GPU: {gpu}</div>}
         </div>
       </div>
 

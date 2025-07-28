@@ -16,5 +16,5 @@ export const StepStatusColors: Record<StepStatus, string> = {
 };
 
 export const HORIZONTAL_SPACING = 300;
-export const VERTICAL_SPACING = 140;
+export const VERTICAL_SPACING = 160;
 export const API_DELAY = 1000;
