@@ -1,1 +1,2 @@
-export { PipelineViz } from './PipelineViz';
+export * from './Badge';
+export * from './PipelineViz';
