@@ -14,3 +14,6 @@ export const StepStatusColors: Record<StepStatus, string> = {
   [StepStatus.FAILED]: "bg-red-500",
   [StepStatus.SKIPPED]: "bg-gray-500",
 };
+
+export const HORIZONTAL_SPACING = 300;
+export const VERTICAL_SPACING = 120;

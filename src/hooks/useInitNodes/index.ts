@@ -1,6 +1,7 @@
 import { Position } from "reactflow";
 import type { Pipeline } from "../../types";
 import { useNodeLevels } from "../useNodeLevels";
+import { HORIZONTAL_SPACING, VERTICAL_SPACING } from "../../constants";
 
 export const useInitNodes = (data: Pipeline) => {
   const levels = useNodeLevels(data);
@@ -14,8 +15,8 @@ export const useInitNodes = (data: Pipeline) => {
       id: step.id,
       type: 'custom',
       position: {
-        x: level * 300, // Horizontal spacing between levels
-        y: indexAtLevel * 120 // Vertical spacing within level
+        x: level * HORIZONTAL_SPACING,
+        y: indexAtLevel * VERTICAL_SPACING
       },
       data: step,
       sourcePosition: Position.Right,
