@@ -13,6 +13,7 @@ import 'reactflow/dist/style.css';
 import type { Pipeline, Step } from '../../types';
 import { useInitEdges, useInitNodes } from '../../hooks';
 import { CustomNode } from '../CustomNode';
+import { CustomEdge } from '../CustomEdge';
 
 interface Props {
   data: Pipeline;
@@ -20,6 +21,10 @@ interface Props {
 
 const nodeTypes = {
   custom: CustomNode,
+};
+
+const edgeTypes = {
+  custom: CustomEdge,
 };
 
 export const PipelineViz: FC<Props> = ({ data }: Props) => {
@@ -47,6 +52,7 @@ export const PipelineViz: FC<Props> = ({ data }: Props) => {
         color='dark'
         fitView
         nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
       >
         <Background />
       </ReactFlow>

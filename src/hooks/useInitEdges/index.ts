@@ -5,5 +5,6 @@ export const useInitEdges = (data: Pipeline) => {
     id: `e-${dep.source}-${dep.target}`,
     source: dep.source,
     target: dep.target,
+    type: 'custom',
   }));
 };
