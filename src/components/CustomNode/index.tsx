@@ -9,7 +9,9 @@ interface Props {
 }
 
 export const CustomNode: FC<Props> = memo(({ data, isConnectable }) => {
-  const { name } = data;
+  const { name, resources } = data;
+  const { cpu, memory, gpu } = resources;
+
   return (
     <>
       <Handle
@@ -20,6 +22,14 @@ export const CustomNode: FC<Props> = memo(({ data, isConnectable }) => {
 
       <div className='font-semibold p-4 bg-stone-700 rounded-lg'>
         {name}
+
+        <div>
+          <div className='text-sm text-stone-400'>
+            <div>CPU: {cpu}</div>
+            <div>Memory: {memory}</div>
+            {gpu && <div>GPU: {gpu}</div>}
+          </div>
+        </div>
       </div>
 
       <Handle
