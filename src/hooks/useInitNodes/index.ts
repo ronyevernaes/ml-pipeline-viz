@@ -12,11 +12,12 @@ export const useInitNodes = (data: Pipeline) => {
 
     return {
       id: step.id,
+      type: 'custom',
       position: {
         x: level * 300, // Horizontal spacing between levels
         y: indexAtLevel * 120 // Vertical spacing within level
       },
-      data: { label: step.name, ...step },
+      data: step,
       sourcePosition: Position.Right,
       targetPosition: Position.Left,
     };

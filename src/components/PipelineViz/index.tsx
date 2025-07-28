@@ -12,6 +12,7 @@ import type { Connection, Edge } from 'reactflow';
 import 'reactflow/dist/style.css';
 import type { Pipeline, Step } from '../../types';
 import { useInitEdges, useInitNodes } from '../../hooks';
+import { CustomNode } from '../CustomNode';
 
 interface Props {
   data: Pipeline;
@@ -41,6 +42,9 @@ export const PipelineViz: FC<Props> = ({ data }: Props) => {
         onConnect={onConnect}
         color='dark'
         fitView
+        nodeTypes={{
+          custom: CustomNode,
+        }}
       >
         <Background />
       </ReactFlow>
