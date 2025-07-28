@@ -31,7 +31,7 @@ export const CustomNode: FC<Props> = memo(({ data, isConnectable }) => {
 
         <div className='text-sm text-stone-400'>
           <div>CPU: {cpu}</div>
-          <div>Memory: {memory}</div>
+          <div>Mem: {memory}</div>
           {gpu && <div>GPU: {gpu}</div>}
         </div>
       </div>

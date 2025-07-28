@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="flex flex-col h-screen">
       <header className="p-4 border-b border-stone-700">
-        <h1 className="text-3xl font-bold">Data Viz Pipelines</h1>
+        <h1 className="text-3xl font-bold">Pipelines Data Viz</h1>
       </header>
 
       <main className="flex-1 pt-4 px-4 min-h-0 flex flex-col">
