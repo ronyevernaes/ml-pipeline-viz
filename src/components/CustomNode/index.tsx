@@ -20,7 +20,7 @@ export const CustomNode: FC<Props> = memo(({ data, isConnectable }) => {
         isConnectable={isConnectable}
       />
 
-      <div className='font-semibold p-4 bg-stone-700 rounded-lg'>
+      <div className='font-semibold p-4 bg-stone-200 rounded-lg'>
         {name}
 
         <div>

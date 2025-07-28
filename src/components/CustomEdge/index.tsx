@@ -22,7 +22,7 @@ export const CustomEdge = ({
     <>
       <BaseEdge id={id} path={edgePath} />
 
-      <circle r="7" className='fill-amber-300'>
+      <circle r="7" className='fill-red-500'>
         <animateMotion dur="2s" repeatCount="indefinite" path={edgePath} />
       </circle>
     </>
