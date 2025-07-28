@@ -11,7 +11,7 @@ import type { Connection, Edge } from 'reactflow';
 
 import 'reactflow/dist/style.css';
 import type { Pipeline, Step } from '../../types';
-import { useInitNodes } from '../../hooks/useInitNodes';
+import { useInitEdges, useInitNodes } from '../../hooks';
 
 interface Props {
   data: Pipeline;
@@ -19,12 +19,7 @@ interface Props {
 
 export const PipelineViz: FC<Props> = ({ data }: Props) => {
   const initialNodes = useInitNodes(data);
-
-  const initialEdges = data.dependencies.map((dep) => ({
-    id: `e-${dep.source}-${dep.target}`,
-    source: dep.source,
-    target: dep.target,
-  }));
+  const initialEdges = useInitEdges(data);
 
   const [nodes, _, onNodesChange] = useNodesState<Step>(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
