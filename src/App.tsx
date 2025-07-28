@@ -9,7 +9,7 @@ function App() {
         <h1 className="text-3xl font-bold">Data Viz Pipelines</h1>
       </header>
 
-      <main className="flex-1 p-4 min-h-0">
+      <main className="flex-1 pt-4 px-4 min-h-0 flex flex-col">
         <PipelineViz data={data as Pipeline} />
       </main>
 

@@ -30,16 +30,20 @@ export const PipelineViz: FC<Props> = ({ data }: Props) => {
   );
 
   return (
-    <ReactFlow
-      nodes={nodes}
-      edges={edges}
-      onNodesChange={onNodesChange}
-      onEdgesChange={onEdgesChange}
-      onConnect={onConnect}
-      color='dark'
-      fitView
-    >
-      <Background />
-    </ReactFlow>
+    <div className='flex-1 min-h-0 flex flex-col'>
+      <h2 className="text-2xl font-semibold">{data.name}</h2>
+
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        color='dark'
+        fitView
+      >
+        <Background />
+      </ReactFlow>
+    </div>
   );
 };
