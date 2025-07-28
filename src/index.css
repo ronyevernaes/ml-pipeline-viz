@@ -14,3 +14,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.react-flow__node.selected {
+  @apply border-2 border-amber-300 rounded-lg;
+}
