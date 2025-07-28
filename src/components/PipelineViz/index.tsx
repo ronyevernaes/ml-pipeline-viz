@@ -18,6 +18,10 @@ interface Props {
   data: Pipeline;
 }
 
+const nodeTypes = {
+  custom: CustomNode,
+};
+
 export const PipelineViz: FC<Props> = ({ data }: Props) => {
   const initialNodes = useInitNodes(data);
   const initialEdges = useInitEdges(data);
@@ -42,9 +46,7 @@ export const PipelineViz: FC<Props> = ({ data }: Props) => {
         onConnect={onConnect}
         color='dark'
         fitView
-        nodeTypes={{
-          custom: CustomNode,
-        }}
+        nodeTypes={nodeTypes}
       >
         <Background />
       </ReactFlow>
